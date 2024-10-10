@@ -1,6 +1,11 @@
 from turtle import Turtle
-class Snake:
+#
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
+class Snake:
     def __init__(self):
         self.snake_body = []
         self.create_snake()
@@ -42,3 +47,20 @@ class Snake:
             #
         self.tom_head.speed(1)
         self.tom_head.forward(10)
+
+    #     Snake Movements
+    def up(self):
+        if self.tom_head.heading() != DOWN:
+            self.tom_head.setheading(UP)
+
+    def down(self):
+        if self.tom_head.heading() != UP:
+            self.tom_head.setheading(270)
+
+    def left(self):
+        if self.tom_head.heading() != RIGHT:
+            self.tom_head.setheading(180)
+
+    def right(self):
+        if self.tom_head.heading() != LEFT:
+            self.tom_head.setheading(0)
